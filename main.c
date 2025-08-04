@@ -12,10 +12,10 @@ struct Station stationNames[V] = {
 // These are all the edges. Change this for number of edges.
 int lines[5][3] = {
     {0,1,100},
-    {0,2,50},
-    {1,3,200},
-    {1,2,50},
-    {2,3,50},
+    {0,2,100},
+    {1,3,100},
+    {1,2,0},
+    {2,3,0},
 };
 
 int stationsOnlyNumbers[V] = {0,1,2,3};
@@ -31,6 +31,14 @@ int main() {
 
     printf("adjacency matrix  representation\n");
     displayStations(stations);
+
+    int path[4];     
+    
+    bool visited[V] = {false};
+    
+    DFS(stations, visited, 0);
+    
+    printf("DFS ran above, did it work?\n");
 
     int pairCount = V * (V-1) / 2;
     int pairs[pairCount][2];
