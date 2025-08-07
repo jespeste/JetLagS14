@@ -31,3 +31,13 @@ void DFS(int stations[V][V], bool visited[V], int start){
         }
     }
 }
+
+int distanceCalculation(int station1, int station2, int path[V]){
+    
+    for(int i=0; i < V-1; i++){
+        printf("%d", path[i]);
+        printf("%d", path[i+1]);
+    }
+
+    return 0;
+}

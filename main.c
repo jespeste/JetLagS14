@@ -32,7 +32,8 @@ int main() {
     printf("adjacency matrix  representation\n");
     displayStations(stations);
 
-    int path[4];     
+    int path[V];     
+
     
     bool visited[V] = {false};
     
