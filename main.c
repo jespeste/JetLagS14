@@ -33,19 +33,23 @@ int main() {
     displayStations(stations);
 
     int path[V];     
-
+    
+    // To keep count of the path.
+    int counter = 0;
     
     bool visited[V] = {false};
     
-    DFS(stations, visited, 0);
+    DFS(stations, visited, 0, path, &counter);
     
     printf("DFS ran above, did it work?\n");
+
+    distanceCalculation(0,3,path);
 
     int pairCount = V * (V-1) / 2;
     int pairs[pairCount][2];
 
     allStationPairs(stationsOnlyNumbers, V, pairs);
-
+    
     for (int i = 0; i < pairCount; i++) {
         printf("Pair %d: (%d, %d)\n", i, pairs[i][0], pairs[i][1]);
     }

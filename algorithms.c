@@ -18,16 +18,19 @@ void allStationPairs(int stations[], int numStations, int pairs[][2]) {
 }
 
 // Takes in the stations
-void DFS(int stations[V][V], bool visited[V], int start){
+void DFS(int stations[V][V], bool visited[V], int start, int path[V], int* counter){
     // No clue how I implement this, we will try though
     
     printf("%d", start);
-
+    printf("counter before: %d", *counter);
+    path[*counter] = start;
+    (*counter)++;
+    printf("counter after: %d", *counter);
     visited[start] = true;
 
     for (int i=0; i < V; i++){
         if (stations[start][i] > 0 && (!visited[i])) {
-            DFS(stations, visited, i);
+            DFS(stations, visited, i, path, counter);
         }
     }
 }
@@ -35,8 +38,8 @@ void DFS(int stations[V][V], bool visited[V], int start){
 int distanceCalculation(int station1, int station2, int path[V]){
     
     for(int i=0; i < V-1; i++){
-        printf("%d", path[i]);
-        printf("%d", path[i+1]);
+        printf("%d \n", path[i]);
+        printf("%d \n", path[i+1]);
     }
 
     return 0;
