@@ -8,7 +8,7 @@ typedef struct TreeNode {
     int vertex;
     struct TreeNode *parent;
     struct TreeNode *first_child;
-    struct TreeNdoe *next_child;
+    struct TreeNode *next_sibling;
 } TreeNode;
 
 TreeNode* createNode(int vertex);

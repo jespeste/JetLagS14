@@ -22,10 +22,8 @@ void DFS(int stations[V][V], bool visited[V], int start, int path[V], int* count
     // No clue how I implement this, we will try though
     
     printf("%d", start);
-    printf("counter before: %d", *counter);
     path[*counter] = start;
     (*counter)++;
-    printf("counter after: %d", *counter);
     visited[start] = true;
 
     for (int i=0; i < V; i++){
